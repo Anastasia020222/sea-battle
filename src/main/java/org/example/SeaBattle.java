@@ -4,15 +4,10 @@ import java.util.Random;
 
 public class SeaBattle {
 
-    //Нарисовать в консоли карту морского боя с раставленными караблями. Каждый раз, при запуске программы расположение
-    //кораблей должно меняться
-    //Всего кораблей: 1 - 4 палубы; 2 - 3 палубы; 3 - 2 палубы; 4 - 1 палуба
-
     public static void main(String[] args) {
         initializeCard();
     }
 
-    //отрисовка карты
     private static void initializeCard() {
         String[][] card = new String[10][10];
 
@@ -73,9 +68,9 @@ public class SeaBattle {
 
         String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
 
-        for (String[] row : card) {
-            for (String cell : row) {
-                System.out.print(cell);
+        for (String[] c : card) {
+            for (String p : c) {
+                System.out.print(p);
             }
             System.out.println();
         }
