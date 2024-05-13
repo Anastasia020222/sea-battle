@@ -40,12 +40,5 @@ public class SeaBattle {
             }
             System.out.println();
         }
-
-//        for (String[] c : card) {
-//            for (String p : c) {
-//                System.out.print(p);
-//            }
-//            System.out.println();
-//        }
     }
 }
