@@ -1,6 +1,6 @@
 package org.example;
 
-import java.util.Random;
+import static org.example.PlaceShips.placeShip;
 
 public class SeaBattle {
 
@@ -16,63 +16,36 @@ public class SeaBattle {
                 card[i][k] = " * ";
             }
         }
-        placeShip(card, 4);
-        placeShip(card, 3);
-        placeShip(card, 3);
+
+        for (int i = 4; i != 0; i--) {
+            for (int j = i; j != 5; j++) {
+                placeShip(card, i);
+            }
+        }
+
         printCard(card);
 
     }
 
-    private static void placeShip(String[][] card, int length) {
-        Random rand = new Random();
-        int x = rand.nextInt(10);
-        int y = rand.nextInt(10);
-        boolean horizontal = rand.nextBoolean();
-
-        while (!checkLocationShips(x, y, card, horizontal, length)) {
-            x = rand.nextInt(10);
-            y = rand.nextInt(10);
-            horizontal = rand.nextBoolean();
-        }
-
-        if (horizontal) {
-            for (int i = 0; i < length; i++) {
-                card[x][y + i] = " X ";
-            }
-        } else {
-            for (int i = 0; i < length; i++) {
-                card[x + i][y] = " X ";
-            }
-        }
-    }
-
-    private static boolean checkLocationShips(int x, int y, String[][] card, boolean horizontal, int length) {
-        if (horizontal) {
-            if (y + length > 9) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            if (x + length > 9) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    }
-
     private static void printCard(String[][] card) {
-        System.out.println(" 1  2  3  4  5  6  7  8  9  10");
-        System.out.println("------------------------------");
+        System.out.println("     A  B  C  D  E  F  G  H  I  J ");
+        System.out.println("   ------------------------------");
 
-        String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"};
+        String[] letters = {" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10"};
 
-        for (String[] c : card) {
-            for (String p : c) {
-                System.out.print(p);
+        for (int i = 0; i < card.length; i++) {
+            System.out.print(letters[i] + "| ");
+            for (int j = 0; j < card[i].length; j++) {
+                System.out.print(card[i][j]);
             }
             System.out.println();
         }
+
+//        for (String[] c : card) {
+//            for (String p : c) {
+//                System.out.print(p);
+//            }
+//            System.out.println();
+//        }
     }
 }
