@@ -1,4 +1,4 @@
-package org.example;
+package org.example.general;
 
 public class LocationShips {
 
@@ -33,6 +33,7 @@ public class LocationShips {
         for (int i = Y0; i <= Y1; i++) {
             for (int j = X0; j <= X1; j++) {
                 if (card[i][j].equals(" X ")) {
+                    System.out.println("Есть рядом стоящий корабль. Нужно изменить параметры.");
                     return false;
                 }
             }
