@@ -44,9 +44,16 @@ public class LocationShips {
     //проверяем, что длина корабля не выходит за границу карты
     public static boolean checkCoordinates(int x, int y, boolean horizontal, int length) {
         if (horizontal) {
-            return x + length <= 9;
+            if (x + length > 10) {
+                System.out.println("Длина корабля выходит за границы карты. Введи новые параметры.");
+                return false;
+            }
         } else {
-            return y + length <= 9;
+            if (y + length > 10) {
+                System.out.println("Длина корабля выходит за границы карты. Введи новые параметры.");
+                return false;
+            }
         }
+        return true;
     }
 }

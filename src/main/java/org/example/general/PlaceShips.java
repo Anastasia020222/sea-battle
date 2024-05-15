@@ -2,6 +2,7 @@ package org.example.general;
 
 public class PlaceShips implements CreateSeaBattle {
 
+    //рисуем корабли
     @Override
     public void placeShip(String[][] card, int length, int x, int y, boolean horizontal) {
         if (horizontal) {

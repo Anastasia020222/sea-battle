@@ -19,8 +19,8 @@ public class InitializeCard extends PlaceShips {
             }
         }
 
-        for (int i = 2; i != 0; i--) {
-            for (int j = i; j != 3; j++) {
+        for (int i = 4; i != 0; i--) {
+            for (int j = i; j != 5; j++) {
                 if (option.equals("1")) {
                     runRandomPlaceShips(card, i);
                 } else {
